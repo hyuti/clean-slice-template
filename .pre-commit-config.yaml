@@ -3,9 +3,9 @@ repos:
   rev: v0.5.1
   hooks:
     - id: go-fmt
-    # just ignore go-vet for now
-    # TODO: will readd later
-    # - id: go-vet
+    - id: go-vet
+      language: system
+      entry: bash -c 'cd services/product'
     - id: go-imports
     - id: validate-toml
     - id: no-go-testing
