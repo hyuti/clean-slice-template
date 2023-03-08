@@ -7,7 +7,7 @@ import (
 	entsql "entgo.io/ent/dialect/sql"
 
 	"github.com/hyuti/clean-slice-template/services/product/ent"
-	_ "github.com/mattn/go-sqlite3"
+	_ "github.com/jackc/pgx/v4/stdlib"
 )
 
 func OpenClient(databaseUrl string, maxPoolSize int) (*ent.Client, error) {

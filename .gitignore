@@ -13,3 +13,11 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+services/*/.env/dev/*
+!services/*/.env/dev/*.sample
+
+services/*/.env/depl/*
+!services/*/.env/depl/*.sample
+
+services/*/tmp

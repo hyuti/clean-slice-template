@@ -6,6 +6,7 @@ require (
 	entgo.io/ent v0.11.9
 	github.com/google/uuid v1.3.0
 	github.com/ilyakaznacheev/cleanenv v1.4.2
+	github.com/jackc/pgx/v4 v4.18.1
 	github.com/kataras/iris/v12 v12.1.8
 	github.com/mattn/go-sqlite3 v1.14.16
 	github.com/mehdihadeli/go-mediatr v1.1.9
@@ -35,6 +36,13 @@ require (
 	github.com/iris-contrib/jade v1.1.3 // indirect
 	github.com/iris-contrib/pongo2 v0.0.1 // indirect
 	github.com/iris-contrib/schema v0.0.1 // indirect
+	github.com/jackc/chunkreader/v2 v2.0.1 // indirect
+	github.com/jackc/pgconn v1.14.0 // indirect
+	github.com/jackc/pgio v1.0.0 // indirect
+	github.com/jackc/pgpassfile v1.0.0 // indirect
+	github.com/jackc/pgproto3/v2 v2.3.2 // indirect
+	github.com/jackc/pgservicefile v0.0.0-20221227161230-091c0ba34f0a // indirect
+	github.com/jackc/pgtype v1.14.0 // indirect
 	github.com/joho/godotenv v1.4.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/kataras/golog v0.0.10 // indirect

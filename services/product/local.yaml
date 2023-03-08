@@ -1,0 +1,40 @@
+version: "3.7"
+
+services:
+    product-app-service:
+      build: 
+        context: .
+        dockerfile: ./build/dev/app/Dockerfile
+      image: product_app_dev
+      container_name: product_app_dev
+      command: /start
+      depends_on:
+        product-db-service:
+          condition: service_healthy
+      env_file:
+        - ./.env/dev/.app
+        - ./.env/dev/.db
+      expose:
+        - 8000
+      volumes:
+        - .:/app:z
+      restart: always
+
+    product-db-service:
+      build:
+        context: .
+        dockerfile: ./build/dev/db/Dockerfile
+      image: product_db_dev
+      container_name: product_db_dev
+      command: postgres -c log_destination=stderr -c log_connections=on -c max_connections=100 -c log_disconnections=on
+      env_file:
+        - ./.env/dev/.db
+      volumes:
+        - product-db-data:/var/lib/postgresql/data:Z
+      healthcheck:
+        test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER"]
+        interval: 10s
+        timeout: 5s
+        retries: 5
+volumes:
+    product-db-data:

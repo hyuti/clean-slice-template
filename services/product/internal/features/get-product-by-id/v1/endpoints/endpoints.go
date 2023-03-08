@@ -8,7 +8,7 @@ import (
 )
 
 func Register(gr iris.Party) {
-	gr.Get("/{id:uuid}", func(ctx iris.Context) {
+	gr.Get("/{id:string}", func(ctx iris.Context) {
 		req := new(dtos.DetailReq)
 		if err := irisUtils.ReadID(ctx, req); err != nil {
 			ctx.Problem(iris.NewProblem().Type("/id").Title("Validation problem").Detail("ID param missing").Status(iris.StatusBadRequest))

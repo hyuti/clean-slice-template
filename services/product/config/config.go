@@ -14,20 +14,20 @@ type (
 	}
 
 	App struct {
-		Debug bool `yaml:"debug" env-required:"true" env:"APP_DEBUG"`
+		Debug bool `env-required:"true" env:"APP_DEBUG"`
 	}
 	HTTP struct {
-		Port string `env-required:"true" env:"PORT"`
+		Port string `env-required:"true" env:"APP_PORT"`
 	}
 	DB struct {
-		PoolMax int    `yaml:"pool_max"`
+		PoolMax int    `env-required:"true" env:"DB_POOL_MAX"`
 		URL     string `env-required:"true" env:"DB_URL"`
 	}
 )
 
 func New() (*Config, error) {
-	cfg := &Config{}
-	err := cleanenv.ReadConfig("./config/config.yml", cfg)
+	cfg := new(Config)
+	err := cleanenv.ReadConfig("config/config.yaml", cfg)
 	if err != nil {
 		return nil, fmt.Errorf("config error: %w", err)
 	}
