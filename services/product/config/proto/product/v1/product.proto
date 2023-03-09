@@ -1,0 +1,18 @@
+syntax="proto3";
+
+package githubcom.hyuti.clean_slice_template.services.product.config.proto.product.v1;
+
+option go_package = "github.com/hyuti/clean-slice-template/services/product/internal/features/gen";
+
+service ProductService {
+    rpc GetProductByID (GetProductByIDRequest) returns (GetProductByIDResponse);
+}
+
+message GetProductByIDRequest {
+    string id = 1;
+}
+message GetProductByIDResponse {
+    string id =1;
+    double price=2;
+    string name=3;
+}

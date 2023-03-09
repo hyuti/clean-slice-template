@@ -1,0 +1,12 @@
+version: v1
+managed:
+  enabled: true
+  go_package_prefix:
+    default: github.com/hyuti/clean-slice-template/services/product/pkg/proto/gen
+plugins:
+  - plugin: buf.build/protocolbuffers/go
+    out: ../pkg/proto/gen
+    opt: paths=source_relative
+  - plugin: buf.build/grpc/go
+    out: ../pkg/proto/gen
+    opt: paths=source_relative
