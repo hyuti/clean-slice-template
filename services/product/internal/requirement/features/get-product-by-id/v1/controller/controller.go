@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/google/uuid"
-	"github.com/hyuti/clean-slice-template/services/product/internal/features/get-product-by-id/v1/dtos"
+	"github.com/hyuti/clean-slice-template/services/product/internal/requirement/features/get-product-by-id/v1/dtos"
 	productv1 "github.com/hyuti/clean-slice-template/services/product/pkg/proto/gen/product/v1"
 	irisUtils "github.com/hyuti/clean-slice-template/services/product/pkg/utils/iris"
 	"github.com/kataras/iris/v12"

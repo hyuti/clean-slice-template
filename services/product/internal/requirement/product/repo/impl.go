@@ -5,7 +5,7 @@ import (
 
 	"github.com/hyuti/clean-slice-template/services/product/ent"
 	"github.com/hyuti/clean-slice-template/services/product/ent/product"
-	"github.com/hyuti/clean-slice-template/services/product/internal/product/models"
+	"github.com/hyuti/clean-slice-template/services/product/internal/requirement/product/models"
 )
 
 type ProductRepo struct {

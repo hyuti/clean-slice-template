@@ -4,20 +4,20 @@ import (
 	"fmt"
 	"net"
 
-	dupCfg1 "github.com/hyuti/clean-slice-template/services/product/config"
-	"github.com/hyuti/clean-slice-template/services/product/internal/config"
-	"github.com/hyuti/clean-slice-template/services/product/internal/features"
+	"github.com/hyuti/clean-slice-template/services/product/config"
+	"github.com/hyuti/clean-slice-template/services/product/internal/infra"
+	"github.com/hyuti/clean-slice-template/services/product/internal/requirement"
 	"github.com/hyuti/clean-slice-template/services/product/pkg/logger"
 	productv1 "github.com/hyuti/clean-slice-template/services/product/pkg/proto/gen/product/v1"
 )
 
-func New(cfg *dupCfg1.Config) {
+func New(cfg *config.Config) {
 	l := logger.New("debug")
 
-	app := config.New(cfg, l)
+	app := infra.New(cfg, l)
 	defer app.DataClient.Close()
 
-	features.New(app.Rest, app.DataClient, app.RPC)
+	requirement.New(app.Rest, app.DataClient, app.RPC)
 	productv1.RegisterProductServiceServer(app.RPC.GetGRPCServer(), app.RPC)
 	app.Rest.Listen(fmt.Sprintf(":%s", cfg.HTTP.Port))
 

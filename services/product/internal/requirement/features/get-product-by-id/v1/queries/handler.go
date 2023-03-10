@@ -3,9 +3,9 @@ package queries
 import (
 	"context"
 
-	"github.com/hyuti/clean-slice-template/services/product/internal/features/get-product-by-id/v1/dtos"
-	"github.com/hyuti/clean-slice-template/services/product/internal/product/models"
-	"github.com/hyuti/clean-slice-template/services/product/internal/product/repo"
+	"github.com/hyuti/clean-slice-template/services/product/internal/requirement/features/get-product-by-id/v1/dtos"
+	"github.com/hyuti/clean-slice-template/services/product/internal/requirement/product/models"
+	"github.com/hyuti/clean-slice-template/services/product/internal/requirement/product/repo"
 )
 
 type Handler struct {
